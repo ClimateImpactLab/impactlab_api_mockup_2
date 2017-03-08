@@ -57,7 +57,10 @@ def updates(update_var):
 def iters():
     def decorator(func):
         def inner(**variables):
+            # Create a superset of the superindices to iterate over
             master_index_list = reduce(lambda x, y: x*y, (v.superindex for v in variables.values()))
+            
+            # Iterate over the product of all superindex components
             for indices in master_index_list:
                 sliced_vars = {vname: v.get_archive(**indices) for vname, v in variables.items()}
                 func(**sliced_vars)

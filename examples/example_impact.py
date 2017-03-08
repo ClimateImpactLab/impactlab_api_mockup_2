@@ -45,15 +45,19 @@ def load_climate(tas):
         with popop.open('r') as f:
             popop_data = pd.read_csv(f)
 
-        return tas_data * popop_data
+        return (tas_data**2) * popop_data
 
     tas2_ir()
+
+
+def compute_mortality(popop, tas):
+    return popop.value * tas.value
 
 
 @impactlab.uses(popop=api.get_variable('/GCP/socioeconomics/popop'), tas=api.get_variable('/GCP/climate/tas'))
 @impactlab.updates(api.get_variable('/GCP/impacts/mortality'))
 def mortality(popop, tas):
-    return popop.value * tas.value
+    return compute_mortality(popop, tas)
 
 
 def main():
