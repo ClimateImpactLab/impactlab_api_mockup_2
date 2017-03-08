@@ -201,8 +201,18 @@ class Variable(object):
 class DataAPI(object):
 
     def __init__(self):
-        self.superindices = {}
-        self.variables = {}
+        self.superindices = {
+            'rcp': SuperIndex('rcp', 'Representative Concentration Pathways', [{'rcp': 'rcp{}'.format(r)} for r in [26, 45, 60, 85]]),
+            'ssp': SuperIndex('ssp', 'Shared Socioeconomic Pathway', [{'ssp': 'ssp{}'.format(s)} for s in range(1,6)])
+        }
+
+        variables = [
+            Variable('/GCP/socioeconomics/popop', self.superindices['ssp']),
+            Variable('/GCP/climate/tas', self.superindices['rcp']),
+            Variable('/GCP/impacts/mortality', self.superindices['rcp']*self.superindices['ssp']),
+            Variable('/GCP/climate/tas2_ir', self.superindices['rcp'])]
+
+        self.variables = {v.name: v for v in variables}
 
     def get_variable(self, var):
         return self.variables[var]
