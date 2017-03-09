@@ -140,7 +140,7 @@ class Archive(object):
         self.value = pd.DataFrame(np.random.random((5,4)))
 
     def __repr__(self):
-        return '<{} {}.nc>'.format(self.__class__.__name__, self.name)
+        return '<{} {}>'.format(self.__class__.__name__, self.name)
 
     def update(self, value):
         self.value = value
