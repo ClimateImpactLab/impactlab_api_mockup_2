@@ -17,18 +17,21 @@ def compute_mortality(popop, tas):
 
 
 @impactlab.uses(popop=api.get_variable('/GCP/socioeconomics/popop'), tas=api.get_variable('/GCP/climate/tas'))
+@impactlab.iters()
 @impactlab.updates(api.get_variable('/GCP/impacts/mortality'))
 def mortality(popop, tas):
     '''
     Demonstrates a simple computation job
 
-    The impactlab.uses decorator accepts keyword arguments of the form 
+    The `impactlab.uses` decorator accepts keyword arguments of the form 
     {name: obj}, where name is the name of argument to pass and obj is a mockfs
     Variable object.
 
-    The impactlab.updates decorator drives a for-loop over all combinations of
-    indices for the given variables. The value returned by the decorated
-    function is used to update the value of the variable for the given indices.
+    The `impactlab.iters` decorator drives a for-loop over all combinations of
+    indices for the given variables.
+
+    The value returned by the decorated function is used to update the value of
+    the variable specified by `impactlab.updates` for the given indices.
     '''
 
     return compute_mortality(popop, tas)
@@ -47,12 +50,14 @@ def tas2_ir(tas):
 
     @impactlab.uses(tas=tas)
     @impactlab.uses(popop=api.get_variable('/GCP/socioeconomics/popop'))
+    @impactlab.iters()
     @impactlab.updates(api.get_variable('/GCP/climate/tas2_ir'))
     def inner(popop, tas):
         '''
         The inner loop's uses() decorator is given tas as an argument. The
-        update decorator sees that tas is an archive rather than a variable and
-        simply passes the value through rather than attempting to loop over it.
+        `iters` decorator sees that tas is an archive rather than a variable
+        and simply passes the value through rather than attempting to loop over
+        it.
         '''
 
         with popop.open('r') as f:

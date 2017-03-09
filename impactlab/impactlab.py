@@ -34,21 +34,16 @@ def updates(update_var):
 
     def decorator(func):
         def inner(**variables):
-            master_index_list = reduce(lambda x, y: x*y, (v.superindex for v in variables.values() if hasattr(v, 'superindex')))
-            for indices in master_index_list:
 
-                archives = {vname: v.get_archive(**indices) for vname, v in variables.items() if hasattr(v, 'superindex')}
+            indices = {}
+            for vname, v in variables.items():
+                if hasattr(v, 'indices'):
+                    indices.update(v.indices)
 
-                for vname, v in variables.items():
-                    if hasattr(v, 'indices'):
-                        indices.update(v.indices)
+            res = func(**variables)
 
-                        archives[vname] = v
-
-                res = func(**archives)
-
-                archive = update_var.get_archive(**indices)
-                archive.update(res)
+            archive = update_var.get_archive(**indices)
+            archive.update(res)
 
         return inner
     return decorator
@@ -57,12 +52,13 @@ def updates(update_var):
 def iters():
     def decorator(func):
         def inner(**variables):
+
             # Create a superset of the superindices to iterate over
-            master_index_list = reduce(lambda x, y: x*y, (v.superindex for v in variables.values()))
-            
-            # Iterate over the product of all superindex components
+            master_index_list = reduce(lambda x, y: x*y, (v.superindex for v in variables.values() if hasattr(v, 'superindex')))
             for indices in master_index_list:
-                sliced_vars = {vname: v.get_archive(**indices) for vname, v in variables.items()}
+
+                sliced_vars = {vname: v.get_archive(**indices) if hasattr(v, 'superindex') else v for vname, v in variables.items()}
+
                 func(**sliced_vars)
 
         return inner
