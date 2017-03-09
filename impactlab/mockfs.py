@@ -222,7 +222,7 @@ class DataAPI(object):
 
     def get_archive(self, var, indices):
 
-        arch_name = var + '/'.join(map(lambda x: str(x[1]), sorted(indices.items(), key=lambda x: x[0]))) + '.nc'
+        arch_name = var + '/' + '/'.join(map(lambda x: str(x[1]), sorted(indices.items(), key=lambda x: x[0]))) + '.nc'
 
         if arch_name not in self.archives:
             self.archives[arch_name] = Archive(arch_name, indices)

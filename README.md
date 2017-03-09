@@ -70,26 +70,26 @@ To see this in action, simply call `mortality`:
 mortality()
 ```
 
-    <Archive /GCP/impacts/mortalityrcp26/ssp1.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp45/ssp1.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp60/ssp1.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp85/ssp1.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp26/ssp2.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp45/ssp2.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp60/ssp2.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp85/ssp2.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp26/ssp3.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp45/ssp3.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp60/ssp3.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp85/ssp3.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp26/ssp4.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp45/ssp4.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp60/ssp4.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp85/ssp4.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp26/ssp5.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp45/ssp5.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp60/ssp5.nc> bumped 0.0.1 --> 0.0.2
-    <Archive /GCP/impacts/mortalityrcp85/ssp5.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp26/ssp1.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp45/ssp1.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp60/ssp1.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp85/ssp1.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp26/ssp2.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp45/ssp2.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp60/ssp2.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp85/ssp2.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp26/ssp3.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp45/ssp3.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp60/ssp3.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp85/ssp3.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp26/ssp4.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp45/ssp4.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp60/ssp4.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp85/ssp4.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp26/ssp5.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp45/ssp5.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp60/ssp5.nc> bumped 0.0.1 --> 0.0.2
+    <Archive /GCP/impacts/mortality/rcp85/ssp5.nc> bumped 0.0.1 --> 0.0.2
 
 
 To run a subset of the jobs, slice the variables in the `@impactlab.uses` calls:
@@ -118,11 +118,11 @@ Note that this function only iterates over `rcp85`:
 mortality_rcp85()
 ```
 
-    <Archive /GCP/impacts/mortalityrcp85/ssp1.nc> bumped 0.0.2 --> 0.0.3
-    <Archive /GCP/impacts/mortalityrcp85/ssp2.nc> bumped 0.0.2 --> 0.0.3
-    <Archive /GCP/impacts/mortalityrcp85/ssp3.nc> bumped 0.0.2 --> 0.0.3
-    <Archive /GCP/impacts/mortalityrcp85/ssp4.nc> bumped 0.0.2 --> 0.0.3
-    <Archive /GCP/impacts/mortalityrcp85/ssp5.nc> bumped 0.0.2 --> 0.0.3
+    <Archive /GCP/impacts/mortality/rcp85/ssp1.nc> bumped 0.0.2 --> 0.0.3
+    <Archive /GCP/impacts/mortality/rcp85/ssp2.nc> bumped 0.0.2 --> 0.0.3
+    <Archive /GCP/impacts/mortality/rcp85/ssp3.nc> bumped 0.0.2 --> 0.0.3
+    <Archive /GCP/impacts/mortality/rcp85/ssp4.nc> bumped 0.0.2 --> 0.0.3
+    <Archive /GCP/impacts/mortality/rcp85/ssp5.nc> bumped 0.0.2 --> 0.0.3
 
 
 ## Running a complex ETL Job
@@ -170,50 +170,50 @@ When this is run, note how the climate data is only loaded once per outer loop:
 tas2_ir()
 ```
 
-    loading <Archive /GCP/climate/tasrcp26.nc>
-    loading <Archive /GCP/socioeconomics/popopssp1.nc>
-    <Archive /GCP/climate/tas2_irrcp26/ssp1.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp2.nc>
-    <Archive /GCP/climate/tas2_irrcp26/ssp2.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp3.nc>
-    <Archive /GCP/climate/tas2_irrcp26/ssp3.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp4.nc>
-    <Archive /GCP/climate/tas2_irrcp26/ssp4.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp5.nc>
-    <Archive /GCP/climate/tas2_irrcp26/ssp5.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/climate/tasrcp45.nc>
-    loading <Archive /GCP/socioeconomics/popopssp1.nc>
-    <Archive /GCP/climate/tas2_irrcp45/ssp1.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp2.nc>
-    <Archive /GCP/climate/tas2_irrcp45/ssp2.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp3.nc>
-    <Archive /GCP/climate/tas2_irrcp45/ssp3.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp4.nc>
-    <Archive /GCP/climate/tas2_irrcp45/ssp4.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp5.nc>
-    <Archive /GCP/climate/tas2_irrcp45/ssp5.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/climate/tasrcp60.nc>
-    loading <Archive /GCP/socioeconomics/popopssp1.nc>
-    <Archive /GCP/climate/tas2_irrcp60/ssp1.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp2.nc>
-    <Archive /GCP/climate/tas2_irrcp60/ssp2.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp3.nc>
-    <Archive /GCP/climate/tas2_irrcp60/ssp3.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp4.nc>
-    <Archive /GCP/climate/tas2_irrcp60/ssp4.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp5.nc>
-    <Archive /GCP/climate/tas2_irrcp60/ssp5.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/climate/tasrcp85.nc>
-    loading <Archive /GCP/socioeconomics/popopssp1.nc>
-    <Archive /GCP/climate/tas2_irrcp85/ssp1.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp2.nc>
-    <Archive /GCP/climate/tas2_irrcp85/ssp2.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp3.nc>
-    <Archive /GCP/climate/tas2_irrcp85/ssp3.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp4.nc>
-    <Archive /GCP/climate/tas2_irrcp85/ssp4.nc> bumped 0.0.1 --> 0.0.2
-    loading <Archive /GCP/socioeconomics/popopssp5.nc>
-    <Archive /GCP/climate/tas2_irrcp85/ssp5.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/climate/tas/rcp26.nc>
+    loading <Archive /GCP/socioeconomics/popop/ssp1.nc>
+    <Archive /GCP/climate/tas2_ir/rcp26/ssp1.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp2.nc>
+    <Archive /GCP/climate/tas2_ir/rcp26/ssp2.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp3.nc>
+    <Archive /GCP/climate/tas2_ir/rcp26/ssp3.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp4.nc>
+    <Archive /GCP/climate/tas2_ir/rcp26/ssp4.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp5.nc>
+    <Archive /GCP/climate/tas2_ir/rcp26/ssp5.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/climate/tas/rcp45.nc>
+    loading <Archive /GCP/socioeconomics/popop/ssp1.nc>
+    <Archive /GCP/climate/tas2_ir/rcp45/ssp1.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp2.nc>
+    <Archive /GCP/climate/tas2_ir/rcp45/ssp2.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp3.nc>
+    <Archive /GCP/climate/tas2_ir/rcp45/ssp3.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp4.nc>
+    <Archive /GCP/climate/tas2_ir/rcp45/ssp4.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp5.nc>
+    <Archive /GCP/climate/tas2_ir/rcp45/ssp5.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/climate/tas/rcp60.nc>
+    loading <Archive /GCP/socioeconomics/popop/ssp1.nc>
+    <Archive /GCP/climate/tas2_ir/rcp60/ssp1.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp2.nc>
+    <Archive /GCP/climate/tas2_ir/rcp60/ssp2.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp3.nc>
+    <Archive /GCP/climate/tas2_ir/rcp60/ssp3.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp4.nc>
+    <Archive /GCP/climate/tas2_ir/rcp60/ssp4.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp5.nc>
+    <Archive /GCP/climate/tas2_ir/rcp60/ssp5.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/climate/tas/rcp85.nc>
+    loading <Archive /GCP/socioeconomics/popop/ssp1.nc>
+    <Archive /GCP/climate/tas2_ir/rcp85/ssp1.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp2.nc>
+    <Archive /GCP/climate/tas2_ir/rcp85/ssp2.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp3.nc>
+    <Archive /GCP/climate/tas2_ir/rcp85/ssp3.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp4.nc>
+    <Archive /GCP/climate/tas2_ir/rcp85/ssp4.nc> bumped 0.0.1 --> 0.0.2
+    loading <Archive /GCP/socioeconomics/popop/ssp5.nc>
+    <Archive /GCP/climate/tas2_ir/rcp85/ssp5.nc> bumped 0.0.1 --> 0.0.2
 
 
 nifty!
