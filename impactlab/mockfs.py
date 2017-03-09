@@ -133,14 +133,14 @@ class Archive(object):
 
     '''
     
-    def __init__(self, name, **indices):
+    def __init__(self, name, indices):
         self.name = name
         self.indices = indices
         self.version = BumpableVersion('0.0.1')
         self.value = pd.DataFrame(np.random.random((5,4)))
 
     def __repr__(self):
-        return '<{} {}/{}.nc>'.format(self.__class__.__name__, self.name, '/'.join(self.indices.values()))
+        return '<{} {}.nc>'.format(self.__class__.__name__, self.name)
 
     def update(self, value):
         self.value = value
@@ -183,19 +183,20 @@ class Variable(object):
 
     '''
 
-    def __init__(self, name, superindex=None):
+    def __init__(self, name, superindex=None, api=None):
         self.name = name
 
         if superindex is None:
             superindex = SuperIndex()
 
         self.superindex = superindex
+        self.api = api
 
     def __getitem__(self, key):
-        return self.__class__(self.name, self.superindex[key])
+        return self.__class__(self.name, self.superindex[key], api=self.api)
 
     def get_archive(self, **indices):
-        return Archive(self.name, **indices)
+        return self.api.get_archive(self.name, indices)
 
 
 class DataAPI(object):
@@ -207,12 +208,23 @@ class DataAPI(object):
         }
 
         variables = [
-            Variable('/GCP/socioeconomics/popop', self.superindices['ssp']),
-            Variable('/GCP/climate/tas', self.superindices['rcp']),
-            Variable('/GCP/impacts/mortality', self.superindices['rcp']*self.superindices['ssp']),
-            Variable('/GCP/climate/tas2_ir', self.superindices['rcp'])]
+            Variable('/GCP/socioeconomics/popop', self.superindices['ssp'], api=self),
+            Variable('/GCP/climate/tas', self.superindices['rcp'], api=self),
+            Variable('/GCP/impacts/mortality', self.superindices['rcp']*self.superindices['ssp'], api=self),
+            Variable('/GCP/climate/tas2_ir', self.superindices['rcp'], api=self)]
 
         self.variables = {v.name: v for v in variables}
 
+        self.archives = {}
+
     def get_variable(self, var):
         return self.variables[var]
+
+    def get_archive(self, var, indices):
+
+        arch_name = var + '/'.join(map(lambda x: str(x[1]), sorted(indices.items(), key=lambda x: x[0]))) + '.nc'
+
+        if arch_name not in self.archives:
+            self.archives[arch_name] = Archive(arch_name, indices)
+
+        return self.archives[arch_name]

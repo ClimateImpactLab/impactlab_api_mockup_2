@@ -1,7 +1,7 @@
 
 from __future__ import absolute_import
 from impactlab import impactlab
-from impactlab.mockfs import DataAPI, Variable, SuperIndex
+from impactlab.mockfs import DataAPI
 
 import pandas as pd
 
@@ -21,6 +21,14 @@ def compute_mortality(popop, tas):
 def mortality(popop, tas):
     '''
     Demonstrates a simple computation job
+
+    The impactlab.uses decorator accepts keyword arguments of the form 
+    {name: obj}, where name is the name of argument to pass and obj is a mockfs
+    Variable object.
+
+    The impactlab.updates decorator drives a for-loop over all combinations of
+    indices for the given variables. The value returned by the decorated
+    function is used to update the value of the variable for the given indices.
     '''
 
     return compute_mortality(popop, tas)
@@ -52,12 +60,15 @@ def tas2_ir(tas):
 
         return (tas_data**2) * popop_data
 
-    tas2_ir()
+    inner()
 
 
 
 def main():
+    print('\nStarting job "tas2_ir"\n{}'.format('='*50))
     tas2_ir()
+
+    print('\nStarting job "mortality"\n{}'.format('='*50))
     mortality()
 
 
